@@ -24,13 +24,20 @@ class CardPinItem extends Component {
         }
     }
     render() {
+        const isSuccess = this.props
+        const trueStyle = isSuccess ? {
+            color: "green",
+        } : {
+                color: "black"
+            }  
+        const styles = { ...style, ...trueStyle}
         return (
             <input
                 ref={(n) => (this.input = n)}
                 maxLength={4}
                 onKeyDown={this.handleKeyDown}
                 onChange={this.onChange}
-                style={style} />
+                style={styles} />
         )
     }
 }
